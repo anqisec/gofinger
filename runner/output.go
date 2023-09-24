@@ -67,7 +67,7 @@ func (o *output) RunEnumeration() {
 	}
 	o.builder.Reset()
 	o.builder.WriteString("fingerprint identification complete .")
-	screenWidth := o.windowsWidth - len(o.builder.String()) - 20
+	screenWidth := o.windowsWidth - len(o.builder.String()) - 25
 	for screenWidth > 0 {
 		o.builder.WriteString(" ")
 		screenWidth--

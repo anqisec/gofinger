@@ -20,7 +20,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "gofinger",
 	Short:   "一款指纹识别工具",
-	Version: "1.0",
+	Version: "0.9",
 	Long:    banner.Banner,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(banner.Banner)
@@ -85,6 +85,6 @@ func init() {
 	rootCmd.Flags().StringVarP(&output, "output", "o", "", "-o results.csv")
 	rootCmd.Flags().IntVarP(&thread, "thread", "t", 50, "-t 25")
 	rootCmd.Flags().StringVarP(&proxy, "proxy", "p", "", "-p http://127.0.0.1:8080")
-	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1~3")
-	rootCmd.Flags().BoolVarP(&stdin, "stdin", "", false, "--stdin")
+	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1-3")
+	rootCmd.Flags().BoolVarP(&stdin, "stdin", "", false, "--stdin true")
 }
