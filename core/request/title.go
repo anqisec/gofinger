@@ -13,7 +13,9 @@ func GetTitle(body string) string {
 	var title string
 	if len(matches) >= 2 {
 		title = matches[1]
-		return title
+		if len(strings.TrimSpace(title)) != 0 {
+			return title
+		}
 	} else {
 		document, err := goquery.NewDocumentFromReader(strings.NewReader(body))
 		if err != nil {
@@ -23,9 +25,9 @@ func GetTitle(body string) string {
 		title = document.Find("title").Text()
 		title = strings.ReplaceAll(title, "\n", "")
 		title = strings.TrimSpace(title)
-		if len(title) != 0 {
+		if len(strings.TrimSpace(title)) != 0 {
 			return title
 		}
-		return "<nil>"
 	}
+	return "<nil>"
 }
