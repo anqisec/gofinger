@@ -2,19 +2,20 @@ package match
 
 import (
 	"gofinger/core/module"
+	"log"
 	"regexp"
 	"strings"
 )
 
 // matchSingleRule 匹配单个规则
 func matchSingleRule(rule string, info module.Info) bool {
-	rule = unEscapeAndSpace(rule)
-	re := regexp.MustCompile(`"(.*?)"$`)
+	re := regexp.MustCompile(`="(.*)"$`)
 	match := re.FindStringSubmatch(rule)
 	var ruleStr string
 	if len(match) > 1 {
 		ruleStr = strings.TrimSpace(match[1])
 	} else {
+		log.Fatalln(rule)
 		return false
 	}
 	if len(strings.TrimSpace(ruleStr)) == 0 {

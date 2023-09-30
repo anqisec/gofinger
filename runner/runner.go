@@ -18,10 +18,7 @@ func NewRunner(options *options.Options) *Runner {
 	return r
 }
 func (r *Runner) RunEnumeration() {
-	// 启动请求协程
-	go r.requestRunner.RunEnumeration()
-	// 启动指纹识别协程
 	go r.fingerRunner.RunEnumeration()
-	// 启动输出
+	go r.requestRunner.RunEnumeration()
 	r.output.RunEnumeration()
 }

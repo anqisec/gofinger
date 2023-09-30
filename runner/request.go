@@ -55,7 +55,7 @@ func (r *RequestRunner) run(url string) {
 		atomic.AddUint64(&r.faildIndex, 1)
 		return
 	}
-	atomic.AddUint64(&r.successIndex, 1)
 	r.UrlInfo <- info
 	<-r.limit
+	atomic.AddUint64(&r.successIndex, 1)
 }

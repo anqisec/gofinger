@@ -14,7 +14,7 @@ type FingerRunner struct {
 	wg            sync.WaitGroup
 	option        *options.Options
 	limit         chan struct{}
-	fingerDatas   module.FingerData
+	fingerDatas   []module.FingerData
 	result        chan module.Result
 	requestRunner *RequestRunner
 	index         uint64
@@ -25,7 +25,7 @@ func NewFingerRunner(option *options.Options, requestRunner *RequestRunner) *Fin
 	f.option = option
 	f.wg = sync.WaitGroup{}
 	f.fingerDatas = data.GetFingerData(option)
-	f.limit = make(chan struct{}, 500)
+	f.limit = make(chan struct{}, 99)
 	f.requestRunner = requestRunner
 	f.result = make(chan module.Result, len(requestRunner.Targets))
 	return f

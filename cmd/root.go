@@ -85,6 +85,6 @@ func init() {
 	rootCmd.Flags().StringVarP(&output, "output", "o", "", "-o results.csv")
 	rootCmd.Flags().IntVarP(&thread, "thread", "t", 50, "-t 25")
 	rootCmd.Flags().StringVarP(&proxy, "proxy", "p", "", "-p http://127.0.0.1:8080")
-	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1-3")
+	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1-2")
 	rootCmd.Flags().BoolVarP(&stdin, "stdin", "", false, "--stdin true")
 }
