@@ -49,13 +49,15 @@ func (r *RequestRunner) RunEnumeration() {
 	close(r.UrlInfo)
 }
 func (r *RequestRunner) run(url string) {
-	defer r.wg.Done()
-	info := request.SendRequest(url, r.Client)
+	defer func() {
+		<-r.limit
+		r.wg.Done()
+	}()
+	info := request.SendRequest(url, request.GetClient(r.Options))
 	if len(info.Url) == 0 {
 		atomic.AddUint64(&r.faildIndex, 1)
 		return
 	}
 	r.UrlInfo <- info
-	<-r.limit
 	atomic.AddUint64(&r.successIndex, 1)
 }

@@ -26596,10 +26596,6 @@
         "rule": "header=\"server: communigatepro\" || header=\"communigatepro\""
     },
     {
-        "cms": "java",
-        "rule": "( body=\"<h2>struts problem report</h2>\" && body=\"there is no action mapped for namespace\" && body=\"no result defined for action and result input\" && body=\"index.jsp\" ) || header=\"set-cookie: jsessionid\""
-    },
-    {
         "cms": "openresty",
         "rule": "body=\"<center>openresty/\" || header=\"ngx_openresty\" || body=\"thank you for flying openresty\" || header=\"server: openresty\""
     },
@@ -41514,5 +41510,13 @@
     {
         "cms": "foscam-nvr",
         "rule": "body=\"style=\\\"background:url(images/con-logo-bg.png;\""
+    },
+    {
+      "cms": "wordpress-plugin royal-elementor",
+      "rule": "body=\"royal elementor addons\" || body=\"royal-elementor-addons\""
+    },
+    {
+      "product": "wordpress-plugin addons-for-elementor-lite",
+      "rule": "body=\"essential-addons-for-elementor-lite\""
     }
 ]

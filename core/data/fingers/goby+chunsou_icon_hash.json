@@ -309,7 +309,7 @@
     },
     {
         "cms": "wordpress",
-        "rule": "(body=\"name=\\\"generator\\\" content=\\\"wordpress \" || (header=\"x-pingback\" && header=\"/xmlrpc.php\" && body=\"/wp-includes/\" ) )"
+        "rule": "body=\"name=\\\"generator\\\" content=\\\"wordpress \" || (header=\"x-pingback\" && header=\"/xmlrpc.php\" && body=\"/wp-includes/\" ) || icon_hash=\"1198047028\""
     },
     {
         "cms": "keyhelp (keyweb ag)",
@@ -3465,7 +3465,7 @@
     },
     {
         "cms": "openfire",
-        "rule": "body=\"background: transparent url(images/login_logo.gif) no-repeat\" || (body=\"class=\\\"row justify-content-center\\\"\" && body=\"<title>openfire 管理界面</title>\") || title=\"openfire admin console\" || title=\"openfire http binding service\""
+        "rule": "body=\"background: transparent url(images/login_logo.gif) no-repeat\" || (body=\"class=\\\"row justify-content-center\\\"\" && body=\"<title>openfire 管理界面</title>\") || title=\"openfire admin console\" || title=\"openfire http binding service\" || icon_hash=\"1211608009\" || title=\"Openfire Console Admin\" || body=\"jive-loginVersion\" "
     },
     {
         "cms": "quanterra-q330",
@@ -13994,5 +13994,13 @@
     {
         "cms": "sap id service: log on",
         "rule": "icon_hash=\"-1967743928\""
+    },
+    {
+        "cms": "wordpress-plugin royal-elementor",
+        "rule": "body=\"royal elementor addons\" || body=\"royal-elementor-addons\""
+    },
+    {
+        "product": "wordpress-plugin addons-for-elementor-lite",
+        "rule": "body=\"essential-addons-for-elementor-lite\""
     }
 ]

@@ -1,6 +1,6 @@
 # gofinger
 
-gofinger 是一款 web 指纹识别工具。
+gofinger 是一款由 golang 开发的 web 指纹识别工具。指纹识别速度快 ，适合大量 url 的指纹识别。
 
 ```shell
 Usage:
@@ -18,14 +18,11 @@ Flags:
   -v, --version         version for gofinger
   
 ```
-
-`level` 指的是用于匹配的指纹数量，1 级误报几乎没有，但由于 chunsou 中有些指纹都是单条规则匹配的，并的数量不多，可能会有误报。这里的数量是指 CMS 的数量，会有重复，可以自己修改指纹去掉。
+level 指的是用于匹配的指纹数量，1 级误报几乎没有，但由于 chunsou 中有些指纹都是单条规则匹配的，并的数量不多，可能会有误报。这里的数量是指 CMS 的数量，会有重复，可以自己修改指纹去掉。
 
 | level | 数量  | 来源                              |
 | ----- | ----- |---------------------------------|
 | 1     | 3499  | Goby软件指纹 + chunsou的icon_hash 部分 |
 | 2     | 10379  | Goby软件指纹 + chunsou所有规则          |
 
-`--stdin` 就是接收外部的 url 数据，比如 `cat urls.txt | gofinger.exe --stdin true`，可以配合向其他工具使用。
-
-感谢 Goby 和 icon_hash 的指纹 ！
+--stdin 就是接收外部的 url 数据，比如 cat urls.txt | gofinger.exe --stdin true，可以配合向其他工具使用。

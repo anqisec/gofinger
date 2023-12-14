@@ -5,6 +5,7 @@ import (
 	"gofinger/core/match"
 	"gofinger/core/module"
 	"gofinger/core/options"
+	"gofinger/core/utils"
 	"strings"
 	"sync"
 	"sync/atomic"
@@ -41,7 +42,10 @@ func (f *FingerRunner) RunEnumeration() {
 }
 
 func (f *FingerRunner) run(info module.Info) {
-	defer f.wg.Done()
+	defer func(f *FingerRunner) {
+		<-f.limit
+		f.wg.Done()
+	}(f)
 	var fingers []string
 	for _, fingerData := range f.fingerDatas {
 		if match.MatchRules(fingerData.Rule, info) {
@@ -51,11 +55,12 @@ func (f *FingerRunner) run(info module.Info) {
 	if len(fingers) == 0 {
 		fingers = append(fingers, "<nil>")
 	}
-	reslut := module.Result{
+	fingers = utils.DeduplicateEmptyStrings(fingers)
+	result := module.Result{
 		Url:     info.Url,
 		Title:   info.Title,
 		Fingers: strings.Join(fingers, ", "),
 	}
-	f.result <- reslut
+	f.result <- result
 	atomic.AddUint64(&f.index, 1)
 }

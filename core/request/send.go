@@ -2,24 +2,19 @@ package request
 
 import (
 	"gofinger/core/module"
+	"gofinger/core/utils"
 	"log"
 	"net/http"
-	"strings"
 )
 
 func SendRequest(url string, client http.Client) module.Info {
-	defer func() {
-		if r := recover(); r != nil {
-			log.Println(r)
-		}
-	}()
-	if !strings.Contains(url, "http") {
-		log.Println(url, " is an invalid URL")
+	url = utils.AddSchemeIfNotExists(url)
+	if url == "" {
+		log.Printf("%s is an invalid url .\n", url)
 		return module.Info{}
 	}
 	request, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		log.Println(err)
 		return module.Info{}
 	}
 	cookie := &http.Cookie{
@@ -31,8 +26,12 @@ func SendRequest(url string, client http.Client) module.Info {
 	request.Header.Set("Connection", "close")
 	request.Header.Set("User-Agent", GetRandomUA())
 	response, err := client.Do(request)
-	defer response.Body.Close()
+	if err != nil {
+		log.Println(err.Error())
+		return module.Info{}
+	}
 	body := GetBody(response)
+	response.Body.Close()
 	if redirectURL := GetJSRedirectURL(body); redirectURL != "" {
 		return SendRequest(redirectURL, client)
 	}

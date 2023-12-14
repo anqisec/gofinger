@@ -44,7 +44,7 @@ func NewOutputRunner(option *options.Options, fingerRunner *FingerRunner, reques
 func (o *output) RunEnumeration() {
 	for result := range o.fingerRunner.result {
 		if o.wirteToFile {
-			o.writer.Write([]string{result.Url, result.Title, result.Fingers})
+			_ = o.writer.Write([]string{result.Url, result.Title, result.Fingers})
 		}
 		o.builder.WriteString(result.Url)
 		o.builder.WriteString(" [ ")
@@ -52,25 +52,25 @@ func (o *output) RunEnumeration() {
 		o.builder.WriteString(" ] [ ")
 		o.builder.WriteString(result.Fingers)
 		o.builder.WriteString(" ]")
-		screenWidth := o.windowsWidth - len(o.builder.String()) - 30
-		for screenWidth > 0 {
-			o.builder.WriteByte(' ')
-			screenWidth--
-		}
-		log.Printf("%s", o.builder.String())
-		o.builder.Reset()
+		o.Print(o.builder.String())
 		fmt.Fprintf(os.Stdout, "All: %d RequestSuccess: %d RequestFaild: %d GetFinger: %d\r", o.requestRunner.allIndex, o.requestRunner.successIndex, o.requestRunner.faildIndex, o.fingerRunner.index)
 	}
 	if o.wirteToFile {
 		o.writer.Flush()
 		o.file.Close()
+		o.Print(fmt.Sprintf("The results are saved in %v .", o.option.Output))
 	}
+	o.Print("fingerprint identification complete .")
+}
+
+func (o *output) Print(str string) {
 	o.builder.Reset()
-	o.builder.WriteString("fingerprint identification complete .")
-	screenWidth := o.windowsWidth - len(o.builder.String()) - 25
+	o.builder.WriteString(str)
+	screenWidth := o.windowsWidth - len(o.builder.String()) - 30
 	for screenWidth > 0 {
-		o.builder.WriteString(" ")
+		o.builder.WriteByte(' ')
 		screenWidth--
 	}
-	log.Println(o.builder.String())
+	log.Printf("%s\n", o.builder.String())
+	o.builder.Reset()
 }

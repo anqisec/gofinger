@@ -20,8 +20,8 @@ func GetClient(options *options.Options) http.Client {
 				req.Header.Add("Cookie", prevReq.Header.Get("Cookie"))
 			}
 		}
-		if len(via) >= 5 {
-			return errors.New("stopped after 5 redirects")
+		if len(via) >= 3 {
+			return errors.New("stopped after 3 redirects")
 		}
 		return nil
 	}
@@ -35,7 +35,7 @@ func GetClient(options *options.Options) http.Client {
 		}
 	}
 	client := http.Client{
-		Timeout:       30 * time.Second,
+		Timeout:       time.Duration(options.Timeout) * time.Second,
 		Transport:     transport,
 		CheckRedirect: checkRedirect,
 	}

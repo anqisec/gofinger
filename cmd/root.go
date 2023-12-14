@@ -13,6 +13,7 @@ import (
 	"gofinger/runner"
 	"log"
 	"os"
+	"os/signal"
 	"time"
 )
 
@@ -51,13 +52,16 @@ var rootCmd = &cobra.Command{
 			}
 		}
 		option := &options.Options{
-			Output: output,
-			Thread: thread,
-			Proxy:  proxy,
-			Level:  level,
-			Urls:   urls,
+			Output:  output,
+			Thread:  thread,
+			Proxy:   proxy,
+			Level:   level,
+			Urls:    urls,
+			Timeout: timeout,
 		}
 		runner := runner.NewRunner(option)
+		c := make(chan os.Signal, 1)
+		signal.Notify(c, os.Interrupt)
 		runner.RunEnumeration()
 		elapsed := time.Since(start)
 		log.Printf("this time it takes %v .", elapsed)
@@ -75,7 +79,7 @@ func Execute() {
 
 var (
 	url, file, proxy, output string
-	thread, level            int
+	thread, level, timeout   int
 	stdin                    bool
 )
 
@@ -87,4 +91,5 @@ func init() {
 	rootCmd.Flags().StringVarP(&proxy, "proxy", "p", "", "-p http://127.0.0.1:8080")
 	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1-2")
 	rootCmd.Flags().BoolVarP(&stdin, "stdin", "", false, "--stdin true")
+	rootCmd.Flags().IntVarP(&timeout, "timeout", "m", 15, "-m 20")
 }

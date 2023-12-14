@@ -59,8 +59,6 @@ func getSingleICOHash(icoUrl string, client http.Client) string {
 			return ""
 		}
 		return Mmh3Hash32(StandBase64(body))
-	} else {
-		return ""
 	}
 	return ""
 }
