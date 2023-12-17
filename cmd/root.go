@@ -21,7 +21,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "gofinger",
 	Short:   "一款指纹识别工具",
-	Version: "0.9",
+	Version: "0.97",
 	Long:    banner.Banner,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(banner.Banner)
@@ -51,13 +51,25 @@ var rootCmd = &cobra.Command{
 				urls = append(urls, scanner.Text())
 			}
 		}
+		if len(urls) > 1 {
+			err := utils.Mkdir("./result")
+			if err != nil {
+				log.Fatalln(err)
+			}
+		}
+		if screenshot {
+			err := utils.Mkdir("./result/screenshots")
+			if err != nil {
+				log.Fatalln(err)
+			}
+		}
 		option := &options.Options{
-			Output:  output,
-			Thread:  thread,
-			Proxy:   proxy,
-			Level:   level,
-			Urls:    urls,
-			Timeout: timeout,
+			Thread:     thread,
+			Proxy:      proxy,
+			Level:      level,
+			Urls:       urls,
+			Timeout:    timeout,
+			Screenshot: screenshot,
 		}
 		runner := runner.NewRunner(option)
 		c := make(chan os.Signal, 1)
@@ -78,18 +90,18 @@ func Execute() {
 }
 
 var (
-	url, file, proxy, output string
-	thread, level, timeout   int
-	stdin                    bool
+	url, file, proxy       string
+	thread, level, timeout int
+	stdin, screenshot      bool
 )
 
 func init() {
 	rootCmd.Flags().StringVarP(&url, "url", "u", "", "-u https://www.baidu.com")
 	rootCmd.Flags().StringVarP(&file, "file", "f", "", "-f targets.txt")
-	rootCmd.Flags().StringVarP(&output, "output", "o", "", "-o results.csv")
 	rootCmd.Flags().IntVarP(&thread, "thread", "t", 50, "-t 25")
 	rootCmd.Flags().StringVarP(&proxy, "proxy", "p", "", "-p http://127.0.0.1:8080")
 	rootCmd.Flags().IntVarP(&level, "level", "l", 1, "-l 1-2")
 	rootCmd.Flags().BoolVarP(&stdin, "stdin", "", false, "--stdin true")
-	rootCmd.Flags().IntVarP(&timeout, "timeout", "m", 15, "-m 20")
+	rootCmd.Flags().IntVarP(&timeout, "timeout", "m", 30, "-m 20")
+	rootCmd.Flags().BoolVarP(&screenshot, "screenshot", "s", false, "-s false")
 }

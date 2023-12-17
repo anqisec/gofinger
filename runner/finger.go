@@ -17,6 +17,7 @@ type FingerRunner struct {
 	limit         chan struct{}
 	fingerDatas   []module.FingerData
 	result        chan module.Result
+	syncUniqueMap sync.Map
 	requestRunner *RequestRunner
 	index         uint64
 }
@@ -29,6 +30,7 @@ func NewFingerRunner(option *options.Options, requestRunner *RequestRunner) *Fin
 	f.limit = make(chan struct{}, 99)
 	f.requestRunner = requestRunner
 	f.result = make(chan module.Result, len(requestRunner.Targets))
+	f.syncUniqueMap = sync.Map{}
 	return f
 }
 func (f *FingerRunner) RunEnumeration() {
@@ -61,6 +63,10 @@ func (f *FingerRunner) run(info module.Info) {
 		Title:   info.Title,
 		Fingers: strings.Join(fingers, ", "),
 	}
-	f.result <- result
+	_, ok := f.syncUniqueMap.Load(info.UniqueHash)
+	if !ok {
+		f.syncUniqueMap.Store(info.UniqueHash, result)
+		f.result <- result
+	}
 	atomic.AddUint64(&f.index, 1)
 }

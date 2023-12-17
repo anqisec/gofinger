@@ -9,13 +9,13 @@ import (
 	"strings"
 )
 
-// goby+icon_hash => 3499
-// goby+chunsou => 10379
+// finger.json => goby + icon_hash => 3499
+// finger_big.json goby + chunsou => 10379
 
-//go:embed fingers/goby+chunsou.json
+//go:embed fingers/finger_big.json
 var high string
 
-//go:embed fingers/goby+chunsou_icon_hash.json
+//go:embed fingers/finger.json
 var low string
 
 // GetFingerData 加载指纹数据

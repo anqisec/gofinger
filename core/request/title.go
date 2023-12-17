@@ -20,7 +20,7 @@ func GetTitle(body string) string {
 		document, err := goquery.NewDocumentFromReader(strings.NewReader(body))
 		if err != nil {
 			log.Println(err)
-			return "<error>"
+			return "<nil>"
 		}
 		title = document.Find("title").Text()
 		title = strings.ReplaceAll(title, "\n", "")

@@ -677,7 +677,7 @@
     },
     {
         "cms": "alibaba-group-dms",
-        "rule": "body=\"copyright &copy;  dms  all rights reserved （alibaba 数据管理产品）\""
+        "rule": "body=\"copyright ©  dms  all rights reserved （alibaba 数据管理产品）\""
     },
     {
         "cms": "sentinelserver",
@@ -1289,7 +1289,7 @@
     },
     {
         "cms": "elite_cms",
-        "rule": "title=\"elite cms\" || body=\"copyright &copy; 2003 - 2017 <a href=\\\"http://www.elite-is.com/cmhome.asp\""
+        "rule": "title=\"elite cms\" || body=\"copyright © 2003 - 2017 <a href=\\\"http://www.elite-is.com/cmhome.asp\""
     },
     {
         "cms": "act-enterprise side internet integrated management platform",
@@ -1329,7 +1329,7 @@
     },
     {
         "cms": "china unicom-cbss automation test",
-        "rule": "body=\"<p>copyright&copy cbss 项目组 自动化测试小组</p>\""
+        "rule": "body=\"<p>copyright© cbss 项目组 自动化测试小组</p>\""
     },
     {
         "cms": "d_trust-ssl",
@@ -2825,7 +2825,7 @@
     },
     {
         "cms": "sentora",
-        "rule": "(body=\"sentora_logo.png\" && body=\" href=\\\"http://www.sentora.org/\\\"\") && (title=\"sentora &gt; login\" || title=\"control panel - login\") || icon_hash=\"-2054889066\""
+        "rule": "(body=\"sentora_logo.png\" && body=\" href=\\\"http://www.sentora.org/\\\"\") && (title=\"sentora > login\" || title=\"control panel - login\") || icon_hash=\"-2054889066\""
     },
     {
         "cms": "b2bbuilder",
@@ -2833,7 +2833,7 @@
     },
     {
         "cms": "泛微-emobile",
-        "rule": "body=\"content=\\\"weaver e-mobile\\\"\" || (body=\"e-mobile&nbsp;\" && body=\"action=\\\"/verifylogin.do\") || body=\"/images/login_logo@2x.png\" || (body=\"window.apiprifix = \\\"/emp\\\";\" && title=\"移动管理平台\")"
+        "rule": "body=\"content=\\\"weaver e-mobile\\\"\" || (body=\"e-mobile \" && body=\"action=\\\"/verifylogin.do\") || body=\"/images/login_logo@2x.png\" || (body=\"window.apiprifix = \\\"/emp\\\";\" && title=\"移动管理平台\")"
     },
     {
         "cms": "mirapoint",
@@ -3441,7 +3441,7 @@
     },
     {
         "cms": "dell-open-manage",
-        "rule": "title=\"open manage&trade;\" || body=\"<img title=\\\"open manage\\\" alt=\\\"open manage\""
+        "rule": "title=\"open manage™\" || body=\"<img title=\\\"open manage\\\" alt=\\\"open manage\""
     },
     {
         "cms": "勤云科技-e-tiller",
@@ -4029,7 +4029,7 @@
     },
     {
         "cms": "phonix-pacs",
-        "rule": "body!=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\" && title=\"ph&ouml;nix pacs merlin\""
+        "rule": "body!=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\" && title=\"phönix pacs merlin\""
     },
     {
         "cms": "qianxin -ngsoc",
@@ -4589,7 +4589,7 @@
     },
     {
         "cms": "phplist-邮件系统",
-        "rule": "body=\"content=\\\"michiel dethmers - http://www.phplist.com\" || body=\"content=\\\"phplist version\" || body=\"&copy; <a href=\\\"http://phplist.com\\\" target\""
+        "rule": "body=\"content=\\\"michiel dethmers - http://www.phplist.com\" || body=\"content=\\\"phplist version\" || body=\"© <a href=\\\"http://phplist.com\\\" target\""
     },
     {
         "cms": "好视通-视频会议",
@@ -4685,7 +4685,7 @@
     },
     {
         "cms": "phpbb",
-        "rule": "header=\"set-cookie: phpbb3_\" || header=\"httponly, phpbb3_\" || (body=\"&copy;\" && body=\"http://www.longluntan.com/zh/phpbb/\" && body=\"phpbb\") || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\""
+        "rule": "header=\"set-cookie: phpbb3_\" || header=\"httponly, phpbb3_\" || (body=\"©\" && body=\"http://www.longluntan.com/zh/phpbb/\" && body=\"phpbb\") || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\""
     },
     {
         "cms": "pubwin-2015 integrated business web management platform",
@@ -5845,7 +5845,7 @@
     },
     {
         "cms": "shopsn",
-        "rule": "body=\"content=\\\"shopsn\" || body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a>&nbsp;提供技术支持\" || body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\""
+        "rule": "body=\"content=\\\"shopsn\" || body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a> 提供技术支持\" || body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\""
     },
     {
         "cms": "dovecot",
@@ -6205,7 +6205,7 @@
     },
     {
         "cms": "apache-haus",
-        "rule": "title=\"apache haus\" || body=\"href=\\\"/apachehaus.ico\" || body=\"copyright &copy; 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\""
+        "rule": "title=\"apache haus\" || body=\"href=\\\"/apachehaus.ico\" || body=\"copyright © 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\""
     },
     {
         "cms": "net2ftp",
@@ -6965,7 +6965,7 @@
     },
     {
         "cms": "f5-bigip",
-        "rule": "((header=\"bigipserver\" || header=\"x-wa-info\" || header=\"x-pvinfo\" || header=\"f5_load\" || title=\"big-ip&reg;\" || header=\"realm=\\\"big-ip\" || header=\"bigip\" || header=\"big-ip\" || header=\"mrhsession\" || header=\"lastmrh_session\" || header=\"f5_fullwt=\" || header=\"f5_ht_shrinked=\" || header=\"mrhshint=\" || (body=\"content=\\\"f5 networks, inc.\" && title=\"big-ip\")) && header!=\"couchdb\" && header!=\"drupal\" && body!=\"server: couchdb\") || (header=\"bigip\" && header!=\"couchdb\" && header!=\"drupal\")"
+        "rule": "((header=\"bigipserver\" || header=\"x-wa-info\" || header=\"x-pvinfo\" || header=\"f5_load\" || title=\"big-ip®\" || header=\"realm=\\\"big-ip\" || header=\"bigip\" || header=\"big-ip\" || header=\"mrhsession\" || header=\"lastmrh_session\" || header=\"f5_fullwt=\" || header=\"f5_ht_shrinked=\" || header=\"mrhshint=\" || (body=\"content=\\\"f5 networks, inc.\" && title=\"big-ip\")) && header!=\"couchdb\" && header!=\"drupal\" && body!=\"server: couchdb\") || (header=\"bigip\" && header!=\"couchdb\" && header!=\"drupal\")"
     },
     {
         "cms": "codepush-server",
@@ -6981,7 +6981,7 @@
     },
     {
         "cms": "h3c-imc",
-        "rule": "(body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\") || body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" || body=\"action=\\\"/imc/login.jsf\" || body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" || body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" || body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" || body=\"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>\" || body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\""
+        "rule": "(body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\") || body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" || body=\"action=\\\"/imc/login.jsf\" || body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" || body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" || body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" || body=\"h3c 智能管理中心</span>\" || body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\""
     },
     {
         "cms": "vertiv-dsview",
@@ -6997,7 +6997,7 @@
     },
     {
         "cms": "promail",
-        "rule": "title=\"promail &trade; - login\" || body=\"powered by squirrelmail.org. squirrelmail\""
+        "rule": "title=\"promail ™ - login\" || body=\"powered by squirrelmail.org. squirrelmail\""
     },
     {
         "cms": "niagara web server / tridium",
@@ -8357,7 +8357,7 @@
     },
     {
         "cms": "avaya-application-enablement-services",
-        "rule": "body=\"<b>application enablement services&nbsp;</b>\" && body=\"avaya\""
+        "rule": "body=\"<b>application enablement services </b>\" && body=\"avaya\""
     },
     {
         "cms": "apache-tomcat",
@@ -9241,7 +9241,7 @@
     },
     {
         "cms": "kelai-network full flow security analysis system",
-        "rule": "title=\"科来网络全流量安全分析系统 - 服务器\" || (body=\"data-i18n=\\\"[html]username\\\">#username&nbsp;&nbsp;</td>\" && body=\"nfr=\\\"true\\\"\")"
+        "rule": "title=\"科来网络全流量安全分析系统 - 服务器\" || (body=\"data-i18n=\\\"[html]username\\\">#username  </td>\" && body=\"nfr=\\\"true\\\"\")"
     },
     {
         "cms": "netdata dashboard",
@@ -9937,7 +9937,7 @@
     },
     {
         "cms": "todaymail",
-        "rule": "body=\"todaynic.com,inc.\" || body=\"todaymail anti-spam police\" || body=\"['company']=\\\"todaymail\" || title=\"&#26102;&#20195;&#20225;&#19994;&#37038\""
+        "rule": "body=\"todaynic.com,inc.\" || body=\"todaymail anti-spam police\" || body=\"['company']=\\\"todaymail\" || title=\"时代企业邮\""
     },
     {
         "cms": "petrochemical yingke - risk analysis system",
@@ -10045,7 +10045,7 @@
     },
     {
         "cms": "smokeping",
-        "rule": "body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" || body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\">&nbsp;-&nbsp;<a class=\\\"menulink\\\" href=\\\"?target=\""
+        "rule": "body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" || body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\"> - <a class=\\\"menulink\\\" href=\\\"?target=\""
     },
     {
         "cms": "paloalto-vmware",
@@ -11273,7 +11273,7 @@
     },
     {
         "cms": "axigen-webadmin",
-        "rule": "header=\"server: axigen-webadmin\" || (body=\"<div class=\\\"name\\\">axigen&nbsp;webadmin</div>\" && title=\"webadmin\")"
+        "rule": "header=\"server: axigen-webadmin\" || (body=\"<div class=\\\"name\\\">axigen webadmin</div>\" && title=\"webadmin\")"
     },
     {
         "cms": "color cube technology - traffic management",
@@ -11541,7 +11541,7 @@
     },
     {
         "cms": "strong news technology - ultracrm",
-        "rule": "title=\"ultracrm by tonethink.soft\" || body=\"&nbsp;tonethink.soft&nbsp;&nbsp;all rights reserved\""
+        "rule": "title=\"ultracrm by tonethink.soft\" || body=\" tonethink.soft  all rights reserved\""
     },
     {
         "cms": "raiden-mail server",
@@ -12069,7 +12069,7 @@
     },
     {
         "cms": "vbulletin",
-        "rule": "title=\"powered by vbulletin\" || (body=\"content=\\\"vbulletin\" && header!=\"x-generator: drupal\" && header!=\"couchdb\" && body!=\"server: dvrdvs-webs\") || (header=bbsessionhash && header=bblastvisit) || body=\"powered by vbulletin&trade;\" || body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\""
+        "rule": "title=\"powered by vbulletin\" || (body=\"content=\\\"vbulletin\" && header!=\"x-generator: drupal\" && header!=\"couchdb\" && body!=\"server: dvrdvs-webs\") || (header=bbsessionhash && header=bblastvisit) || body=\"powered by vbulletin™\" || body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\""
     },
     {
         "cms": "exploration and development information system",
@@ -12077,7 +12077,7 @@
     },
     {
         "cms": "faq-manager",
-        "rule": "body=\"<td><font size=\\\"-1\\\">&nbsp;</font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" || body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\""
+        "rule": "body=\"<td><font size=\\\"-1\\\"> </font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" || body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\""
     },
     {
         "cms": "zte-alarm research",
@@ -12845,7 +12845,7 @@
     },
     {
         "cms": "teradici-pcoip-zero-client",
-        "rule": "body=\"pcoip&#174 zero client\" && body=\"password_value\""
+        "rule": "body=\"pcoip® zero client\" && body=\"password_value\""
     },
     {
         "cms": "apache-forrest",
@@ -13277,7 +13277,7 @@
     },
     {
         "cms": "avaya-aura-utility-server",
-        "rule": "((body=\"vmstitle\\\">avaya aura&#8482;&nbsp;utility server\" || body=\"/webhelp/base/utility_toc.htm\" || (body=\"avaya aura&reg;&nbsp;utility services\" && body=\"avaya inc. all rights reserved\")) && body!=\"server: couchdb\")"
+        "rule": "((body=\"vmstitle\\\">avaya aura™ utility server\" || body=\"/webhelp/base/utility_toc.htm\" || (body=\"avaya aura® utility services\" && body=\"avaya inc. all rights reserved\")) && body!=\"server: couchdb\")"
     },
     {
         "cms": "microsoft-exchange-server-2016-cu11",
@@ -13897,7 +13897,7 @@
     },
     {
         "cms": "apereo-cas",
-        "rule": "body=\"cas &#8211; central authentication service\""
+        "rule": "body=\"cas – central authentication service\""
     },
     {
         "cms": "ipeer",
@@ -13989,7 +13989,7 @@
     },
     {
         "cms": "ibm-cognos",
-        "rule": "body=\"/cgi-bin/cognos.cgi\" || body=\"cognos &#26159; international business machines corp\" || title=\"ibm cognos business intelligence\""
+        "rule": "body=\"/cgi-bin/cognos.cgi\" || body=\"cognos 是 international business machines corp\" || title=\"ibm cognos business intelligence\""
     },
     {
         "cms": "sap id service: log on",

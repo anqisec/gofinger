@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gofinger</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none !important;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: #0867C1;
+      color: white;
+      font-size: 24px;
+      height: 64px;
+      line-height: 64px;
+      text-align: left;
+      padding-left: 20px;
+      padding-top: 10px;
+      font-family: 'Indie Flower', cursive;
+    }
+    .header a {
+      color: white;
+      text-decoration: none !important;
+    }
+    .container {
+      width: 90%;
+      margin: 100px auto 20px;
+      background-color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+	  border: 1px solid #ddd;
+
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    .expanded-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .expanded-table th, .expanded-table td {
+      border: none;
+      padding: 12px;
+      text-align: left;
+    }
+    .expanded-table img {
+      width: 100%;
+      height: auto;
+    }
+    .show-btn {
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+	  width: 80px;
+	  text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="https://github.com/fuyoumingyan/gofinger" target="_blank">GoFinger</a>
+  </div>
+  <div class="container">
+    <table id="webInfo">
+      <thead>
+        <tr>
+          <th>目标</th>
+          <th>标题</th>
+          <th>指纹</th>
+          <th style="width: 80px;text-align: center;">截图</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    var webInfo = [
+      {{range .}}
+      {
+        url: '{{.Url}}',
+        title: '{{.Title}}',
+        fingerprint: '{{.Fingers}}',
+        screenshot: '{{.Screenshot}}'
+      },
+      {{end}}
+    ];
+    const tableBody = document.getElementById('tableBody');
+
+    function createExpandedRow(info, index) {
+      const expandedRow = document.createElement('tr');
+      expandedRow.classList.add('expanded-row');
+      expandedRow.style.display = 'none'; // 默认隐藏展开的行
+
+      expandedRow.innerHTML = `
+        <td colspan="4">
+          <table class="expanded-table">
+            <tbody>
+              <tr>
+                <td colspan="2" align="center">
+                  <img src="${info.screenshot}" alt="screenshot">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      `;
+      return expandedRow;
+    }
+
+    // 循环遍历webInfo数组，生成表格内容
+    webInfo.forEach((info, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><a href="${info.url}" target="_blank">${info.url}</a></td>
+        <td>${info.title}</td>
+        <td>${info.fingerprint}</td>
+        <td class="show-btn">显示</td> <!-- 放置按钮的列 -->
+      `;
+
+      const expandedRow = createExpandedRow(info, index);
+
+      row.querySelector('.show-btn').addEventListener('click', () => {
+        const btnText = row.querySelector('.show-btn').textContent;
+        if (btnText === '显示') {
+          row.querySelector('.show-btn').textContent = '隐藏';
+          expandedRow.style.display = 'table-row'; // 显示截图行
+        } else {
+          row.querySelector('.show-btn').textContent = '显示';
+          expandedRow.style.display = 'none'; // 隐藏截图行
+        }
+      });
+
+      tableBody.appendChild(row);
+      tableBody.appendChild(expandedRow);
+    });
+  </script>
+</body>
+</html>

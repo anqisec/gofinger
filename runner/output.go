@@ -3,37 +3,45 @@ package runner
 import (
 	"encoding/csv"
 	"fmt"
+	"gofinger/core/module"
 	"gofinger/core/options"
 	out "gofinger/core/output"
+	"gofinger/core/template"
+	"gofinger/core/utils"
 	"log"
 	"os"
 	"strings"
 )
 
 type output struct {
-	file          *os.File
-	writer        *csv.Writer
-	builder       *strings.Builder
-	option        *options.Options
-	fingerRunner  *FingerRunner
-	requestRunner *RequestRunner
-	wirteToFile   bool
-	windowsWidth  int
+	file             *os.File
+	writer           *csv.Writer
+	builder          *strings.Builder
+	option           *options.Options
+	fingerRunner     *FingerRunner
+	requestRunner    *RequestRunner
+	saveCSV          bool
+	saveHtml         bool
+	screenshotResult []module.Result
+	windowsWidth     int
 }
 
 func NewOutputRunner(option *options.Options, fingerRunner *FingerRunner, requestRunner *RequestRunner) *output {
 	o := new(output)
 	o.option = option
-	if option.Output != "" {
-		file, err := os.Create(option.Output)
+	if len(option.Urls) > 1 {
+		file, err := os.Create("./result/results.csv")
 		if err != nil {
 			log.Println(err)
 		}
 		file.WriteString("\xEF\xBB\xBF")
 		o.file = file
 		o.writer = csv.NewWriter(o.file)
-		o.wirteToFile = true
+		o.saveCSV = true
 		o.writer.Write([]string{"url", "Title", "Finger"})
+	}
+	if option.Screenshot {
+		o.saveHtml = true
 	}
 	o.builder = new(strings.Builder)
 	o.windowsWidth = out.GetWindowWith()
@@ -43,8 +51,12 @@ func NewOutputRunner(option *options.Options, fingerRunner *FingerRunner, reques
 }
 func (o *output) RunEnumeration() {
 	for result := range o.fingerRunner.result {
-		if o.wirteToFile {
-			_ = o.writer.Write([]string{result.Url, result.Title, result.Fingers})
+		if o.saveCSV {
+			o.writer.Write([]string{result.Url, result.Title, result.Fingers})
+		}
+		if o.saveHtml {
+			result.Screenshot = fmt.Sprintf("./result/screenshots/%v.png", utils.Md5(result.Url))
+			o.screenshotResult = append(o.screenshotResult, result)
 		}
 		o.builder.WriteString(result.Url)
 		o.builder.WriteString(" [ ")
@@ -55,12 +67,18 @@ func (o *output) RunEnumeration() {
 		o.Print(o.builder.String())
 		fmt.Fprintf(os.Stdout, "All: %d RequestSuccess: %d RequestFaild: %d GetFinger: %d\r", o.requestRunner.allIndex, o.requestRunner.successIndex, o.requestRunner.faildIndex, o.fingerRunner.index)
 	}
-	if o.wirteToFile {
+	if o.saveCSV {
 		o.writer.Flush()
 		o.file.Close()
-		o.Print(fmt.Sprintf("The results are saved in %v .", o.option.Output))
 	}
 	o.Print("fingerprint identification complete .")
+	o.Print("Start taking screenshots of URLs.")
+	if o.saveHtml {
+		screenshotRunner := NewScreenshotRunner(o.screenshotResult)
+		screenshotRunner.RunEnumeration()
+		template.GetHtmlResult(o.screenshotResult)
+	}
+	o.Print("Screenshots completed.")
 }
 
 func (o *output) Print(str string) {

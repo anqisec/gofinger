@@ -1,6 +1,12 @@
 # gofinger
 
-gofinger 是一款由 golang 开发的 web 指纹识别工具。指纹识别速度快 ，适合大量 url 的指纹识别。
+## 工具介绍
+
+gofinger 是一款由 golang 开发的批量 url 处理工具, 可一键对 url 进行指纹识别、存活验证、站点去重、站点截图。
+
+当拿到大量 url 时可快速对其资产有一定认识，寻找薄弱资产。
+
+
 
 ```shell
 Usage:

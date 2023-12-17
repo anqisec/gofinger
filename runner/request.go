@@ -53,7 +53,7 @@ func (r *RequestRunner) run(url string) {
 		<-r.limit
 		r.wg.Done()
 	}()
-	info := request.SendRequest(url, request.GetClient(r.Options))
+	info := request.SendRequest(url, r.Client)
 	if len(info.Url) == 0 {
 		atomic.AddUint64(&r.faildIndex, 1)
 		return

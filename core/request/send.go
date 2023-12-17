@@ -3,18 +3,27 @@ package request
 import (
 	"gofinger/core/module"
 	"gofinger/core/utils"
+	"html"
 	"log"
 	"net/http"
+	"net/url"
+	"strings"
 )
 
-func SendRequest(url string, client http.Client) module.Info {
-	url = utils.AddSchemeIfNotExists(url)
-	if url == "" {
-		log.Printf("%s is an invalid url .\n", url)
+func SendRequest(urlStr string, client http.Client) module.Info {
+	if !strings.HasPrefix(urlStr, "http") {
+		urlStr = "http://" + urlStr
+	}
+	parse, err := url.Parse(urlStr)
+	if err != nil {
+		log.Println(err)
 		return module.Info{}
 	}
-	request, err := http.NewRequest("GET", url, nil)
+	urlStr = utils.GetHealthUrl(parse)
+	ip := utils.GetIP(parse)
+	request, err := http.NewRequest("GET", urlStr, nil)
 	if err != nil {
+		log.Println(err)
 		return module.Info{}
 	}
 	cookie := &http.Cookie{
@@ -22,27 +31,29 @@ func SendRequest(url string, client http.Client) module.Info {
 		Value: "me",
 	}
 	request.AddCookie(cookie)
-	request.Header.Set("Accept", "*/*;q=0.8")
-	request.Header.Set("Connection", "close")
+	request.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
 	request.Header.Set("User-Agent", GetRandomUA())
 	response, err := client.Do(request)
 	if err != nil {
-		log.Println(err.Error())
+		log.Println(err)
 		return module.Info{}
 	}
-	body := GetBody(response)
+	body := html.UnescapeString(GetBody(response))
+	title := GetTitle(body)
 	response.Body.Close()
-	if redirectURL := GetJSRedirectURL(body); redirectURL != "" {
+	redirectURL := GetJSRedirectURL(urlStr, body)
+	if redirectURL != "" && title == "<nil>" {
 		return SendRequest(redirectURL, client)
 	}
 	icoHashs := getICOHash(response.Request.URL.String(), body, client)
 	info := module.Info{
-		Url:      url,
-		Title:    GetTitle(body),
-		Body:     body,
-		Header:   GetHeader(response),
-		IcoHashs: icoHashs,
-		Cert:     getCertContent(url),
+		Url:        urlStr,
+		Title:      title,
+		Body:       body,
+		Header:     GetHeader(response),
+		IcoHashs:   icoHashs,
+		Cert:       getCertContent(urlStr),
+		UniqueHash: utils.Md5(body + ip),
 	}
 	return info
 }

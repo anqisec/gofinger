@@ -289,7 +289,7 @@
     },
     {
         "cms": "todaymail",
-        "rule": "body=\"todaynic.com,inc.\" || body=\"todaymail anti-spam police\" || body=\"['company']=\\\"todaymail\" || title=\"&#26102;&#20195;&#20225;&#19994;&#37038\" || ( body=\"todaynic.com,inc.\" && body=\"todaymail anti-spam police\" && body=\"['company']=\\\"todaymail\" )"
+        "rule": "body=\"todaynic.com,inc.\" || body=\"todaymail anti-spam police\" || body=\"['company']=\\\"todaymail\" || title=\"时代企业邮\" || ( body=\"todaynic.com,inc.\" && body=\"todaymail anti-spam police\" && body=\"['company']=\\\"todaymail\" )"
     },
     {
         "cms": "nington-cas",
@@ -817,7 +817,7 @@
     },
     {
         "cms": "colasoft-tsa",
-        "rule": "( body=\"data-i18n=\\\"[html]username\\\">#username&nbsp;&nbsp;</td>\" && body=\"nfr=\\\"true\\\"\" )"
+        "rule": "( body=\"data-i18n=\\\"[html]username\\\">#username  </td>\" && body=\"nfr=\\\"true\\\"\" )"
     },
     {
         "cms": "synology_nas",
@@ -1241,7 +1241,7 @@
     },
     {
         "cms": "netgear-wndr3400v3",
-        "rule": "body=\"netgear wndr3400v3&nbsp;\" || header=\"netgear wndr3400v3\""
+        "rule": "body=\"netgear wndr3400v3 \" || header=\"netgear wndr3400v3\""
     },
     {
         "cms": "sq580-system",
@@ -4693,7 +4693,7 @@
     },
     {
         "cms": "vbulletin",
-        "rule": "title=\"powered by vbulletin\" || (body=\"content=\\\"vbulletin\" && header!=\"x-generator: drupal\" && header!=\"couchdb\" && body!=\"server: dvrdvs-webs\") || (header=bbsessionhash && header=bblastvisit) || body=\"powered by vbulletin&trade;\" || body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\" || ( body=\"content=\\\"vbulletin\" && body=\"powered by vbulletin&trade;\" && body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\" ) || ( header=\"bbsessionhash\" && header=\"bblastvisit\" ) || body=\"content=\\\"vbulletin\" || body=\"powered by vbulletin&trade;\" || body=\"vbulletin\""
+        "rule": "title=\"powered by vbulletin\" || (body=\"content=\\\"vbulletin\" && header!=\"x-generator: drupal\" && header!=\"couchdb\" && body!=\"server: dvrdvs-webs\") || (header=bbsessionhash && header=bblastvisit) || body=\"powered by vbulletin™\" || body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\" || ( body=\"content=\\\"vbulletin\" && body=\"powered by vbulletin™\" && body=\"<!-- do not remove this copyright notice -->powered by < a href=\\\"https://www.vbulletin.com\\\" id=\\\"vbulletinlink\\\">\" ) || ( header=\"bbsessionhash\" && header=\"bblastvisit\" ) || body=\"content=\\\"vbulletin\" || body=\"powered by vbulletin™\" || body=\"vbulletin\""
     },
     {
         "cms": "nsfocus-aurora self scan agent",
@@ -4985,7 +4985,7 @@
     },
     {
         "cms": "huawei-company's-product",
-        "rule": "body=\"copyright &copy; huawei technologies co.\""
+        "rule": "body=\"copyright © huawei technologies co.\""
     },
     {
         "cms": "canon-mp620-series",
@@ -5317,7 +5317,7 @@
     },
     {
         "cms": "asus-rt-ac68u",
-        "rule": "( body=\"var product_name='rt-ac68u'\" && body=\"capture(status_router.sys_model</script></div>asus rt-ac68u\" && body=\"capture(status_router.sys_model</script></div> asus rt-ac68u&nbsp;\" && body=\"<div class=\\\"prod_madelname\\\">rt-ac68u\" && body=\"class=\\\"prod_madelname\\\">jrs eco 100 on asus rt-ac68u</div>\" && body=\"class=\\\"prod_madelname\\\" style=\\\"margin-left:78px;\\\">rt-ac68u\" && body=\"var mmc = {\" && body=\"asus rt-ac68u\" ) || header=\"rt-ac68u\""
+        "rule": "( body=\"var product_name='rt-ac68u'\" && body=\"capture(status_router.sys_model</script></div>asus rt-ac68u\" && body=\"capture(status_router.sys_model</script></div> asus rt-ac68u \" && body=\"<div class=\\\"prod_madelname\\\">rt-ac68u\" && body=\"class=\\\"prod_madelname\\\">jrs eco 100 on asus rt-ac68u</div>\" && body=\"class=\\\"prod_madelname\\\" style=\\\"margin-left:78px;\\\">rt-ac68u\" && body=\"var mmc = {\" && body=\"asus rt-ac68u\" ) || header=\"rt-ac68u\""
     },
     {
         "cms": "bagecms",
@@ -7053,7 +7053,7 @@
     },
     {
         "cms": "weaver-emobile",
-        "rule": "( body=\"content=\\\"weaver e-mobile\\\"\" && body=\"e-mobile&nbsp;\" && body=\"action=\\\"/verifylogin.do\" && body=\"/images/login_logo@2x.png\" && body=\"window.apiprifix = \\\"/emp\\\";\" )"
+        "rule": "( body=\"content=\\\"weaver e-mobile\\\"\" && body=\"e-mobile \" && body=\"action=\\\"/verifylogin.do\" && body=\"/images/login_logo@2x.png\" && body=\"window.apiprifix = \\\"/emp\\\";\" )"
     },
     {
         "cms": "tomcat默认页面",
@@ -7081,7 +7081,7 @@
     },
     {
         "cms": "promail",
-        "rule": "title=\"promail &trade; - login\" || body=\"powered by squirrelmail.org. squirrelmail\""
+        "rule": "title=\"promail ™ - login\" || body=\"powered by squirrelmail.org. squirrelmail\""
     },
     {
         "cms": "promise-webpam",
@@ -7881,7 +7881,7 @@
     },
     {
         "cms": "dell-open-manage",
-        "rule": "title=\"open manage&trade;\" || body=\"<img title=\\\"open manage\\\" alt=\\\"open manage\""
+        "rule": "title=\"open manage™\" || body=\"<img title=\\\"open manage\\\" alt=\\\"open manage\""
     },
     {
         "cms": "efm-networks-iptime-a2004ns-r",
@@ -8761,7 +8761,7 @@
     },
     {
         "cms": "company's-product",
-        "rule": "body=\"辽宁瑞思科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有\" || header=\"realm=\\\"technicolor\""
+        "rule": "body=\"辽宁瑞思科技有限公司    版权所有\" || header=\"realm=\\\"technicolor\""
     },
     {
         "cms": "cisco-sx80",
@@ -9549,7 +9549,7 @@
     },
     {
         "cms": "phpcms",
-        "rule": "(body=\"powered by\" && body=\"http://www.phpcms.cn\") || body=\"content=\\\"phpcms\" || body=\"powered by phpcms\" || body=\"data/config.js\" || ( body=\"http://www.phpcms.cn\" && body=\"content=\\\"phpcms\" && body=\"powered by phpcms\" && body=\"data/configs.js\" ) || body=\"http://www.phpcms.cn\" || body=\"content=\\\"phpcms\" || body=\"powered by phpcms\" || body=\"data/config.js\" || body=\"/index.php?m=content&c=index&a=lists\" || body=\"/index.php?m=content&amp;c=index&amp;a=lists\""
+        "rule": "(body=\"powered by\" && body=\"http://www.phpcms.cn\") || body=\"content=\\\"phpcms\" || body=\"powered by phpcms\" || body=\"data/config.js\" || ( body=\"http://www.phpcms.cn\" && body=\"content=\\\"phpcms\" && body=\"powered by phpcms\" && body=\"data/configs.js\" ) || body=\"http://www.phpcms.cn\" || body=\"content=\\\"phpcms\" || body=\"powered by phpcms\" || body=\"data/config.js\" || body=\"/index.php?m=content&c=index&a=lists\" || body=\"/index.php?m=content&c=index&a=lists\""
     },
     {
         "cms": "stcms",
@@ -12305,7 +12305,7 @@
     },
     {
         "cms": "avaya-application-enablement-services",
-        "rule": "body=\"<b>application enablement services&nbsp;</b>\" && body=\"avaya\""
+        "rule": "body=\"<b>application enablement services </b>\" && body=\"avaya\""
     },
     {
         "cms": "zte-e105",
@@ -12901,7 +12901,7 @@
     },
     {
         "cms": "byzoro-security-gateway",
-        "rule": "body=\"&nbsp;patrolflow 多业务安全网关\""
+        "rule": "body=\" patrolflow 多业务安全网关\""
     },
     {
         "cms": "mvmmall多用户商城系统",
@@ -14689,7 +14689,7 @@
     },
     {
         "cms": "teradici-pcoip-zero-client",
-        "rule": "( body=\"pcoip&#174 zero client\" && body=\"password_value\" )"
+        "rule": "( body=\"pcoip® zero client\" && body=\"password_value\" )"
     },
     {
         "cms": "activecollab",
@@ -15829,7 +15829,7 @@
     },
     {
         "cms": "intellinet-ip-camera",
-        "rule": "( body=\"copyright &copy;  intellinet network solutions\" && body=\"http://www.intellinet-network.com/driver/netcam.exe\" ) || body=\"copyright &copy;  intellinet network solutions\" || body=\"http://www.intellinet-network.com/driver/netcam.exe\""
+        "rule": "( body=\"copyright ©  intellinet network solutions\" && body=\"http://www.intellinet-network.com/driver/netcam.exe\" ) || body=\"copyright ©  intellinet network solutions\" || body=\"http://www.intellinet-network.com/driver/netcam.exe\""
     },
     {
         "cms": "lancom-firewall",
@@ -16777,7 +16777,7 @@
     },
     {
         "cms": "ibm-cognos",
-        "rule": "body=\"/cgi-bin/cognos.cgi\" || body=\"cognos &#26159; international business machines corp\" || title=\"ibm cognos business intelligence\" || ( body=\"/cgi-bin/cognos.cgi\" && body=\"cognos &#26159; international business machines corp\" )"
+        "rule": "body=\"/cgi-bin/cognos.cgi\" || body=\"cognos 是 international business machines corp\" || title=\"ibm cognos business intelligence\" || ( body=\"/cgi-bin/cognos.cgi\" && body=\"cognos 是 international business machines corp\" )"
     },
     {
         "cms": "sonicwall-company's-product",
@@ -17245,7 +17245,7 @@
     },
     {
         "cms": "avaya-aura-utility-server",
-        "rule": "((body=\"vmstitle\\\">avaya aura&#8482;&nbsp;utility server\" || body=\"/webhelp/base/utility_toc.htm\" || (body=\"avaya aura&reg;&nbsp;utility services\" && body=\"avaya inc. all rights reserved\")) && body!=\"server: couchdb\") || ( body=\"vmstitle\\\">avaya aura&#8482;&nbsp;utility server\" && body=\"/webhelp/base/utility_toc.htm\" && body=\"avaya aura&reg;&nbsp;utility services\" && body=\"avaya inc. all rights reserved\" ) || body=\"vmstitle\\\">avaya aura&#8482;&nbsp;utility server\" || body=\"/webhelp/base/utility_toc.htm\""
+        "rule": "((body=\"vmstitle\\\">avaya aura™ utility server\" || body=\"/webhelp/base/utility_toc.htm\" || (body=\"avaya aura® utility services\" && body=\"avaya inc. all rights reserved\")) && body!=\"server: couchdb\") || ( body=\"vmstitle\\\">avaya aura™ utility server\" && body=\"/webhelp/base/utility_toc.htm\" && body=\"avaya aura® utility services\" && body=\"avaya inc. all rights reserved\" ) || body=\"vmstitle\\\">avaya aura™ utility server\" || body=\"/webhelp/base/utility_toc.htm\""
     },
     {
         "cms": "leanote-notepad",
@@ -18125,7 +18125,7 @@
     },
     {
         "cms": "zyxel-pk5001z",
-        "rule": "( body=\">centurylink&reg; modem configuration zyxel pk5001z<\" && body=\"centurylink.com</a>\" )"
+        "rule": "( body=\">centurylink® modem configuration zyxel pk5001z<\" && body=\"centurylink.com</a>\" )"
     },
     {
         "cms": "poweralert",
@@ -20361,7 +20361,7 @@
     },
     {
         "cms": "phplist",
-        "rule": "( body=\"content=\\\"michiel dethmers - http://www.phplist.com\" && body=\"content=\\\"phplist version\" && body=\"&copy; <a href=\\\"http://phplist.com\\\" target\" ) || header=\"phplist\""
+        "rule": "( body=\"content=\\\"michiel dethmers - http://www.phplist.com\" && body=\"content=\\\"phplist version\" && body=\"© <a href=\\\"http://phplist.com\\\" target\" ) || header=\"phplist\""
     },
     {
         "cms": "jtl shop",
@@ -20469,7 +20469,7 @@
     },
     {
         "cms": "car-portal",
-        "rule": "body=\"powered by <a href=\\\"http://www.netartmedia.net/carsportal\" || body=\"class=\\\"bodyfontwhite\\\"><strong>&nbsp;car script\""
+        "rule": "body=\"powered by <a href=\\\"http://www.netartmedia.net/carsportal\" || body=\"class=\\\"bodyfontwhite\\\"><strong> car script\""
     },
     {
         "cms": "5vtechnologies-blueangelsoftwaresuite",
@@ -21097,7 +21097,7 @@
     },
     {
         "cms": "hg100r-l4",
-        "rule": "( body=\"nav.rg_str_incorrect_id_password\" && body=\"copyright &copy; 2014 humax co., ltd. all rights reserved\" )"
+        "rule": "( body=\"nav.rg_str_incorrect_id_password\" && body=\"copyright © 2014 humax co., ltd. all rights reserved\" )"
     },
     {
         "cms": "instabot",
@@ -21293,7 +21293,7 @@
     },
     {
         "cms": "phplist-邮件系统",
-        "rule": "body=\"content=\\\"michiel dethmers - http://www.phplist.com\" || body=\"content=\\\"phplist version\" || body=\"&copy; <a href=\\\"http://phplist.com\\\" target\""
+        "rule": "body=\"content=\\\"michiel dethmers - http://www.phplist.com\" || body=\"content=\\\"phplist version\" || body=\"© <a href=\\\"http://phplist.com\\\" target\""
     },
     {
         "cms": "hillstone-hsa",
@@ -21841,7 +21841,7 @@
     },
     {
         "cms": "cisco-asa-5500-x",
-        "rule": "body=\"content=\\\"asa&nbsp;5500-x\\\"\""
+        "rule": "body=\"content=\\\"asa 5500-x\\\"\""
     },
     {
         "cms": "octopress",
@@ -24949,7 +24949,7 @@
     },
     {
         "cms": "cerio-dt300n",
-        "rule": "body=\"copyright &copy; 2012 cerio. all rights reserved\""
+        "rule": "body=\"copyright © 2012 cerio. all rights reserved\""
     },
     {
         "cms": "dht_802.11n_router",
@@ -25897,7 +25897,7 @@
     },
     {
         "cms": "vnpt-technology-igate",
-        "rule": "body=\"copyright &copy;2013 - vnpt technology\""
+        "rule": "body=\"copyright ©2013 - vnpt technology\""
     },
     {
         "cms": "huawei mcu",
@@ -26109,7 +26109,7 @@
     },
     {
         "cms": "apache-haus",
-        "rule": "title=\"apache haus\" || body=\"href=\\\"/apachehaus.ico\" || body=\"copyright &copy; 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\" || ( body=\"href=\\\"/apachehaus.ico\" && body=\"copyright &copy; 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\" )"
+        "rule": "title=\"apache haus\" || body=\"href=\\\"/apachehaus.ico\" || body=\"copyright © 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\" || ( body=\"href=\\\"/apachehaus.ico\" && body=\"copyright © 2008-2017 <a href=\\\"http://www.apachehaus.com\\\">the apache haus</a>\" )"
     },
     {
         "cms": "clipshare",
@@ -26253,7 +26253,7 @@
     },
     {
         "cms": "trident7-wave7-olt",
-        "rule": "( body=\"wave7 optics, inc. all rights reserved.\" && body=\"<td valign=\\\"bottom\\\" colspan=2><font size=2 align=\\\"justify\\\">&copy; \" )"
+        "rule": "( body=\"wave7 optics, inc. all rights reserved.\" && body=\"<td valign=\\\"bottom\\\" colspan=2><font size=2 align=\\\"justify\\\">© \" )"
     },
     {
         "cms": "alcatel_lucent-extended-communication-server",
@@ -27645,7 +27645,7 @@
     },
     {
         "cms": "faq-manager",
-        "rule": "body=\"<td><font size=\\\"-1\\\">&nbsp;</font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" || body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\" || ( body=\"<td><font size=\\\"-1\\\">&nbsp;</font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" && body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\" )"
+        "rule": "body=\"<td><font size=\\\"-1\\\"> </font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" || body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\" || ( body=\"<td><font size=\\\"-1\\\"> </font><p><b><font size=\\\"-1\\\">faq admin area</font></b></td>\" && body=\"<a href=\\\"admin/\\\">admin area</a></td></tr></table></body></html>\" )"
     },
     {
         "cms": "docebolms",
@@ -28137,7 +28137,7 @@
     },
     {
         "cms": "wireless-access-point-controller",
-        "rule": "( body=\"var oemproductname = \\\"mvc_howay6000\\\"\" && body=\"<select id = \\\"selclangswitch\\\" class=\\\"langswitch\\\" onchange = \\\"switchpagelanguage(\\\">\" && body=\"苏州汉明科技有限公司\" && body=\"var oemproductname = \\\"mvc_howay6100\\\"\" && body=\"src=\\\"images/acchtext.png\\\"\" && body=\"版权所有 &copy 2009-2017</div>\" )"
+        "rule": "( body=\"var oemproductname = \\\"mvc_howay6000\\\"\" && body=\"<select id = \\\"selclangswitch\\\" class=\\\"langswitch\\\" onchange = \\\"switchpagelanguage(\\\">\" && body=\"苏州汉明科技有限公司\" && body=\"var oemproductname = \\\"mvc_howay6100\\\"\" && body=\"src=\\\"images/acchtext.png\\\"\" && body=\"版权所有 © 2009-2017</div>\" )"
     },
     {
         "cms": "tp-link wireless wa701nd",
@@ -28285,7 +28285,7 @@
     },
     {
         "cms": "kelai-network full flow security analysis system",
-        "rule": "title=\"科来网络全流量安全分析系统 - 服务器\" || (body=\"data-i18n=\\\"[html]username\\\">#username&nbsp;&nbsp;</td>\" && body=\"nfr=\\\"true\\\"\")"
+        "rule": "title=\"科来网络全流量安全分析系统 - 服务器\" || (body=\"data-i18n=\\\"[html]username\\\">#username  </td>\" && body=\"nfr=\\\"true\\\"\")"
     },
     {
         "cms": "thinksaas",
@@ -29409,7 +29409,7 @@
     },
     {
         "cms": "axigen-webadmin",
-        "rule": "header=\"server: axigen-webadmin\" || (body=\"<div class=\\\"name\\\">axigen&nbsp;webadmin</div>\" && title=\"webadmin\")"
+        "rule": "header=\"server: axigen-webadmin\" || (body=\"<div class=\\\"name\\\">axigen webadmin</div>\" && title=\"webadmin\")"
     },
     {
         "cms": "phpwebsite",
@@ -30277,7 +30277,7 @@
     },
     {
         "cms": "apereo-cas",
-        "rule": "body=\"cas &#8211; central authentication service\""
+        "rule": "body=\"cas – central authentication service\""
     },
     {
         "cms": "h3c-web network management system",
@@ -31161,7 +31161,7 @@
     },
     {
         "cms": "mshift",
-        "rule": "body=\"powered by mshift&reg\" || header=\"dcttype=1;\""
+        "rule": "body=\"powered by mshift®\" || header=\"dcttype=1;\""
     },
     {
         "cms": "zyxel-nbg5615",
@@ -31321,7 +31321,7 @@
     },
     {
         "cms": "h3c-imc",
-        "rule": "(body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\") || body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" || body=\"action=\\\"/imc/login.jsf\" || body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" || body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" || body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" || body=\"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>\" || body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\" || ( body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\" && body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" && body=\"action=\\\"/imc/login.jsf\" && body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" && body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" && body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" && body=\"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>\" && body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\" )"
+        "rule": "(body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\") || body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" || body=\"action=\\\"/imc/login.jsf\" || body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" || body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" || body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" || body=\"h3c 智能管理中心</span>\" || body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\" || ( body=\"imc来宾接入自助管理系统\" && body=\"login_logo_h3c.png.jsf\" && body=\"com_h3c_imc_usr_usermgr_alluser_overlaydiv\" && body=\"action=\\\"/imc/login.jsf\" && body=\"src=\\\"/imc/javax.faces.resource/images/login_logo_h3c.png.jsf?ln=primefaces-imc-new-webui\" && body=\"<span class=\\\"cmn_mn_normalfont\\\">h3c 智能管理中心\" && body=\"src=\\\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/\" && body=\"h3c 智能管理中心</span>\" && body=\"href=\\\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\\\"\" )"
     },
     {
         "cms": "dell-openmanage",
@@ -31333,7 +31333,7 @@
     },
     {
         "cms": "technicolor-tg582n",
-        "rule": "( body=\"var headertext = 'technicolor&nbsp;tg582n'\" && body=\"var headertext = 'technicolor tg582n'\" )"
+        "rule": "( body=\"var headertext = 'technicolor tg582n'\" && body=\"var headertext = 'technicolor tg582n'\" )"
     },
     {
         "cms": "tp-link r480t+",
@@ -31921,7 +31921,7 @@
     },
     {
         "cms": "star-network",
-        "rule": "( body=\">star network &amp; promotion ltd\" && body=\">star network and promotion ltd\" && body=\"<a href=\\\"http://www.s4u.co.il \" && body=\"<a href=\\\"http://www.starltd.net\" )"
+        "rule": "( body=\">star network & promotion ltd\" && body=\">star network and promotion ltd\" && body=\"<a href=\\\"http://www.s4u.co.il \" && body=\"<a href=\\\"http://www.starltd.net\" )"
     },
     {
         "cms": "netgear wnr1000",
@@ -32001,7 +32001,7 @@
     },
     {
         "cms": "f5-bigip",
-        "rule": "((header=\"bigipserver\" || header=\"x-wa-info\" || header=\"x-pvinfo\" || header=\"f5_load\" || title=\"big-ip&reg;\" || header=\"realm=\\\"big-ip\" || header=\"bigip\" || header=\"big-ip\" || header=\"mrhsession\" || header=\"lastmrh_session\" || header=\"f5_fullwt=\" || header=\"f5_ht_shrinked=\" || header=\"mrhshint=\" || (body=\"content=\\\"f5 networks, inc.\" && title=\"big-ip\")) && header!=\"couchdb\" && header!=\"drupal\" && body!=\"server: couchdb\") || (header=\"bigip\" && header!=\"couchdb\" && header!=\"drupal\") || body=\"content=\\\"f5 networks, inc.\" || ( header=\"bigipserver\" && header=\"mrhshint=\" )"
+        "rule": "((header=\"bigipserver\" || header=\"x-wa-info\" || header=\"x-pvinfo\" || header=\"f5_load\" || title=\"big-ip®\" || header=\"realm=\\\"big-ip\" || header=\"bigip\" || header=\"big-ip\" || header=\"mrhsession\" || header=\"lastmrh_session\" || header=\"f5_fullwt=\" || header=\"f5_ht_shrinked=\" || header=\"mrhshint=\" || (body=\"content=\\\"f5 networks, inc.\" && title=\"big-ip\")) && header!=\"couchdb\" && header!=\"drupal\" && body!=\"server: couchdb\") || (header=\"bigip\" && header!=\"couchdb\" && header!=\"drupal\") || body=\"content=\\\"f5 networks, inc.\" || ( header=\"bigipserver\" && header=\"mrhshint=\" )"
     },
     {
         "cms": "seceon-otm",
@@ -32705,7 +32705,7 @@
     },
     {
         "cms": "centrecom-ar-routor",
-        "rule": "( body=\"centrecom&reg; ar260s v2</span>\" && body=\"centrecom&reg; arx640s</span>\" )"
+        "rule": "( body=\"centrecom® ar260s v2</span>\" && body=\"centrecom® arx640s</span>\" )"
     },
     {
         "cms": "h3c web网管",
@@ -32885,7 +32885,7 @@
     },
     {
         "cms": "cbss automated testing",
-        "rule": "body=\"<p>copyright&copy cbss 项目组 自动化测试小组</p>\""
+        "rule": "body=\"<p>copyright© cbss 项目组 自动化测试小组</p>\""
     },
     {
         "cms": "d-link-dir_600",
@@ -32993,7 +32993,7 @@
     },
     {
         "cms": "alibaba-group-dms",
-        "rule": "body=\"copyright &copy;  dms  all rights reserved （alibaba 数据管理产品）\""
+        "rule": "body=\"copyright ©  dms  all rights reserved （alibaba 数据管理产品）\""
     },
     {
         "cms": "dahlia-server",
@@ -33045,7 +33045,7 @@
     },
     {
         "cms": "strong news technology - ultracrm",
-        "rule": "title=\"ultracrm by tonethink.soft\" || body=\"&nbsp;tonethink.soft&nbsp;&nbsp;all rights reserved\""
+        "rule": "title=\"ultracrm by tonethink.soft\" || body=\" tonethink.soft  all rights reserved\""
     },
     {
         "cms": "brickcom-cameras-and-surveillance",
@@ -34205,7 +34205,7 @@
     },
     {
         "cms": "centurylink-actiontec-m1000",
-        "rule": "body=\">centurylink&reg; modem configuration actiontec m1000<\""
+        "rule": "body=\">centurylink® modem configuration actiontec m1000<\""
     },
     {
         "cms": "catfish(鲶鱼cms)",
@@ -34249,7 +34249,7 @@
     },
     {
         "cms": "clansphere",
-        "rule": "body=\"content=\\\"clansphere\" || body=\"index.php?mod=clansphere&amp;action=about\""
+        "rule": "body=\"content=\\\"clansphere\" || body=\"index.php?mod=clansphere&action=about\""
     },
     {
         "cms": "qm-system",
@@ -34549,7 +34549,7 @@
     },
     {
         "cms": "zte-zxhn-h268a",
-        "rule": "body=\"logintitle\\\">welcome to &#72;&#50;&#54;&#56;&#65;. please login\""
+        "rule": "body=\"logintitle\\\">welcome to H268A. please login\""
     },
     {
         "cms": "linksys befsr41/befsr11/befsru31",
@@ -34777,7 +34777,7 @@
     },
     {
         "cms": "asus-rt-n66u",
-        "rule": "( body=\"<div class=\\\"prod_madelname\\\">rt-n66u\" && body=\"capture(status_router.sys_model</script></div> asus rt-n66u&nbsp;\" && body=\"capture(status_router.sys_model</script></div>asus rt-n66u\" && body=\"class=\\\"prod_madelname\\\" style=\\\"margin-left:78px;\\\">rt-n66u\" ) || ( header=\"rt-n66u\" && header=\"asus rt-n66u \" )"
+        "rule": "( body=\"<div class=\\\"prod_madelname\\\">rt-n66u\" && body=\"capture(status_router.sys_model</script></div> asus rt-n66u \" && body=\"capture(status_router.sys_model</script></div>asus rt-n66u\" && body=\"class=\\\"prod_madelname\\\" style=\\\"margin-left:78px;\\\">rt-n66u\" ) || ( header=\"rt-n66u\" && header=\"asus rt-n66u \" )"
     },
     {
         "cms": "h3c-ssl-vpn",
@@ -36425,7 +36425,7 @@
     },
     {
         "cms": "phonix-pacs",
-        "rule": "body!=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\" && title=\"ph&ouml;nix pacs merlin\" || body=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\""
+        "rule": "body!=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\" && title=\"phönix pacs merlin\" || body=\"<a href=\\\"/pacs/\\\"><img src=\\\"pacs/images/logo.svg\\\">\""
     },
     {
         "cms": "lg-oled65b9fna",
@@ -36809,7 +36809,7 @@
     },
     {
         "cms": "whatweb",
-        "rule": "( body=\"<body><center><table border=0><tr align=center><td><font color=red size=5>troy serial server</font></td></tr>\" && body=\"network card access password&#058; </b><input type=password size=16 maxlength=16 name=access_psw>\" ) || ( header=\"file-created wed, 14 jul 1999 04:00:00 gmt\" && header=\"xcd web admin\" )"
+        "rule": "( body=\"<body><center><table border=0><tr align=center><td><font color=red size=5>troy serial server</font></td></tr>\" && body=\"network card access password: </b><input type=password size=16 maxlength=16 name=access_psw>\" ) || ( header=\"file-created wed, 14 jul 1999 04:00:00 gmt\" && header=\"xcd web admin\" )"
     },
     {
         "cms": "invisionpowerboard",
@@ -37129,7 +37129,7 @@
     },
     {
         "cms": "vsp-stats-processor",
-        "rule": "( body=\"<a href=\\\"http://www.clanavl.com/vsp/\\\">vsp</a> v\" && body=\"<body>error: cannot establish database connection or database database_name does not exist\" && body=\"&nbsp;theme:bismarck by <a href=\\\"#\\\" title=\\\"myrddin8 <at> gmail <dot> com\\\">myrddin</a>&nbsp;\" )"
+        "rule": "( body=\"<a href=\\\"http://www.clanavl.com/vsp/\\\">vsp</a> v\" && body=\"<body>error: cannot establish database connection or database database_name does not exist\" && body=\" theme:bismarck by <a href=\\\"#\\\" title=\\\"myrddin8 <at> gmail <dot> com\\\">myrddin</a> \" )"
     },
     {
         "cms": "remobjects dxsock web server",
@@ -37733,7 +37733,7 @@
     },
     {
         "cms": "ultracrm",
-        "rule": "body=\"&nbsp;tonethink.soft&nbsp;&nbsp;all rights reserved\""
+        "rule": "body=\" tonethink.soft  all rights reserved\""
     },
     {
         "cms": "新秀b2c商城系统",
@@ -38389,7 +38389,7 @@
     },
     {
         "cms": "泛微-emobile",
-        "rule": "body=\"content=\\\"weaver e-mobile\\\"\" || (body=\"e-mobile&nbsp;\" && body=\"action=\\\"/verifylogin.do\") || body=\"/images/login_logo@2x.png\" || (body=\"window.apiprifix = \\\"/emp\\\";\" && title=\"移动管理平台\")"
+        "rule": "body=\"content=\\\"weaver e-mobile\\\"\" || (body=\"e-mobile \" && body=\"action=\\\"/verifylogin.do\") || body=\"/images/login_logo@2x.png\" || (body=\"window.apiprifix = \\\"/emp\\\";\" && title=\"移动管理平台\")"
     },
     {
         "cms": "ascotel-ftp",
@@ -38725,7 +38725,7 @@
     },
     {
         "cms": "china unicom-cbss automation test",
-        "rule": "body=\"<p>copyright&copy cbss 项目组 自动化测试小组</p>\""
+        "rule": "body=\"<p>copyright© cbss 项目组 自动化测试小组</p>\""
     },
     {
         "cms": "hostmonster - web hosting",
@@ -40197,7 +40197,7 @@
     },
     {
         "cms": "sentora",
-        "rule": "(body=\"sentora_logo.png\" && body=\" href=\\\"http://www.sentora.org/\\\"\") && (title=\"sentora &gt; login\" || title=\"control panel - login\") || icon_hash=\"-2054889066\" || ( body=\" sentora_logo.png \" && body=\" href=\\\"http://www.sentora.org/\\\"\" )"
+        "rule": "(body=\"sentora_logo.png\" && body=\" href=\\\"http://www.sentora.org/\\\"\") && (title=\"sentora > login\" || title=\"control panel - login\") || icon_hash=\"-2054889066\" || ( body=\" sentora_logo.png \" && body=\" href=\\\"http://www.sentora.org/\\\"\" )"
     },
     {
         "cms": "google-gae",
@@ -40501,7 +40501,7 @@
     },
     {
         "cms": "shopsn",
-        "rule": "body=\"content=\\\"shopsn\" || body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a>&nbsp;提供技术支持\" || body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\" || ( body=\"content=\\\"shopsn\" && body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a>&nbsp;提供技术支持\" && body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\" ) || header=\"shopsn\""
+        "rule": "body=\"content=\\\"shopsn\" || body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a> 提供技术支持\" || body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\" || ( body=\"content=\\\"shopsn\" && body=\"href=\\\"http://www.shopsn.net\\\">商城系统</a> 提供技术支持\" && body=\"<span>shopsn全网开源<a style=\\\"padding: 0px\\\" href=\\\"http://www.shopsn.net\" ) || header=\"shopsn\""
     },
     {
         "cms": "d-link-dir-110",
@@ -40793,7 +40793,7 @@
     },
     {
         "cms": "smokeping",
-        "rule": "body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" || body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\">&nbsp;-&nbsp;<a class=\\\"menulink\\\" href=\\\"?target=\" || ( body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" && body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\">&nbsp;-&nbsp;<a class=\\\"menulink\\\" href=\\\"?target=\" )"
+        "rule": "body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" || body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\"> - <a class=\\\"menulink\\\" href=\\\"?target=\" || ( body=\"<a href=\\\"http://oss.oetiker.ch/smokeping/counter.cgi/\" && body=\"<tr><td class=\\\"menuitem\\\" colspan=\\\"2\\\"> - <a class=\\\"menulink\\\" href=\\\"?target=\" )"
     },
     {
         "cms": "weblogic server",
@@ -41013,7 +41013,7 @@
     },
     {
         "cms": "phpbb",
-        "rule": "header=\"set-cookie: phpbb3_\" || header=\"httponly, phpbb3_\" || (body=\"&copy;\" && body=\"http://www.longluntan.com/zh/phpbb/\" && body=\"phpbb\") || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\" || ( header=\"set-cookie: phpbb3_\" && header=\"httponly, phpbb3_\" ) || body=\"http://www.longluntan.com/zh/phpbb/\" || body=\"phpbb\" || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\" || header=\"set-cookie:phpbb3_\" || header=\"httponly, phpbb3_\""
+        "rule": "header=\"set-cookie: phpbb3_\" || header=\"httponly, phpbb3_\" || (body=\"©\" && body=\"http://www.longluntan.com/zh/phpbb/\" && body=\"phpbb\") || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\" || ( header=\"set-cookie: phpbb3_\" && header=\"httponly, phpbb3_\" ) || body=\"http://www.longluntan.com/zh/phpbb/\" || body=\"phpbb\" || body=\"phpbb group\\\" />\" || body=\"start quick hack - phpbb statistics mod\" || header=\"set-cookie:phpbb3_\" || header=\"httponly, phpbb3_\""
     },
     {
         "cms": "otenet ondsl live camera",
@@ -41037,7 +41037,7 @@
     },
     {
         "cms": "elite_cms",
-        "rule": "title=\"elite cms\" || body=\"copyright &copy; 2003 - 2017 <a href=\\\"http://www.elite-is.com/cmhome.asp\""
+        "rule": "title=\"elite cms\" || body=\"copyright © 2003 - 2017 <a href=\\\"http://www.elite-is.com/cmhome.asp\""
     },
     {
         "cms": "knet",
@@ -41289,7 +41289,7 @@
     },
     {
         "cms": "byzoro-smart",
-        "rule": "body=\"smart s150&nbsp;系统登录\""
+        "rule": "body=\"smart s150 系统登录\""
     },
     {
         "cms": "dreambox(tv-reciever",
@@ -41512,11 +41512,11 @@
         "rule": "body=\"style=\\\"background:url(images/con-logo-bg.png;\""
     },
     {
-      "cms": "wordpress-plugin royal-elementor",
-      "rule": "body=\"royal elementor addons\" || body=\"royal-elementor-addons\""
+        "cms": "wordpress-plugin royal-elementor",
+        "rule": "body=\"royal elementor addons\" || body=\"royal-elementor-addons\""
     },
     {
-      "product": "wordpress-plugin addons-for-elementor-lite",
-      "rule": "body=\"essential-addons-for-elementor-lite\""
+        "product": "wordpress-plugin addons-for-elementor-lite",
+        "rule": "body=\"essential-addons-for-elementor-lite\""
     }
 ]

@@ -2,7 +2,7 @@ package runner
 
 import (
 	"gofinger/core/options"
-	"log"
+	"gofinger/core/template"
 	"os"
 	"os/signal"
 )
@@ -27,11 +27,13 @@ func (r *Runner) RunEnumeration() {
 	signal.Notify(c, os.Interrupt)
 	go func() {
 		for range c {
-			log.Println("CTRL+C pressed: Exiting")
-			if r.output.wirteToFile {
+			r.output.Print("CTRL+C pressed: Exiting")
+			if r.output.saveCSV {
 				r.output.writer.Flush()
 				r.output.file.Close()
-				log.Printf("The results are saved in %v .", r.output.option.Output)
+				template.GetHtmlResult(r.output.screenshotResult)
+				r.output.Print("The results are saved in ./result/results.csv .")
+				r.output.Print("The results are saved in ./result/results.html .")
 			}
 			os.Exit(1)
 		}
