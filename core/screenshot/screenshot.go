@@ -23,8 +23,8 @@ func GetScreenshot(browser *rod.Browser, result module.Result) error {
 		return err
 	}
 	defer page.Close()
-	//err = page.WaitStable(time.Second)
-	err = page.WaitLoad()
+	err = page.WaitStable(3 * time.Second)
+	//err = page.WaitLoad()
 	if err != nil {
 		return err
 	}
