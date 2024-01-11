@@ -1,4 +1,4 @@
-module gofinger
+module github.com/fuyoumingyan/gofinger
 
 go 1.20
 
