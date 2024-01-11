@@ -1,8 +1,8 @@
 package request
 
 import (
-	"gofinger/core/module"
-	"gofinger/core/utils"
+	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/core/utils"
 	"html"
 	"log"
 	"net/http"

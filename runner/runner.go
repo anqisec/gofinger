@@ -1,8 +1,8 @@
 package runner
 
 import (
-	"gofinger/core/options"
-	"gofinger/core/template"
+	"github.com/fuyoumingyan/gofinger/core/options"
+	"github.com/fuyoumingyan/gofinger/core/template"
 	"os"
 	"os/signal"
 )

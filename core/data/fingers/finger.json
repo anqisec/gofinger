@@ -14002,5 +14002,9 @@
     {
         "product": "wordpress-plugin addons-for-elementor-lite",
         "rule": "body=\"essential-addons-for-elementor-lite\""
+    },
+    {
+        "cms": "amazon s3",
+        "rule": "header=\"AmazonS3\" || header=\"x-amz\""
     }
 ]

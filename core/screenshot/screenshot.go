@@ -1,9 +1,9 @@
 package screenshot
 
 import (
+	"github.com/fuyoumingyan/gofinger/core/module"
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
-	"gofinger/core/module"
 	"os"
 	"time"
 )

@@ -3,7 +3,7 @@ package request
 import (
 	"crypto/tls"
 	"errors"
-	"gofinger/core/options"
+	"github.com/fuyoumingyan/gofinger/core/options"
 	"net/http"
 	"net/url"
 	"strings"

@@ -1,9 +1,9 @@
 package runner
 
 import (
+	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/core/screenshot"
 	"github.com/go-rod/rod"
-	"gofinger/core/module"
-	"gofinger/core/screenshot"
 	"log"
 	"sync"
 )

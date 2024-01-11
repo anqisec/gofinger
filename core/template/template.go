@@ -2,7 +2,7 @@ package template
 
 import (
 	_ "embed"
-	"gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/core/module"
 	"html/template"
 	"log"
 	"os"

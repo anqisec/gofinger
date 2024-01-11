@@ -1,7 +1,7 @@
 package request
 
 import (
-	"gofinger/core/utils"
+	"github.com/fuyoumingyan/gofinger/core/utils"
 	"log"
 	"regexp"
 	"strings"

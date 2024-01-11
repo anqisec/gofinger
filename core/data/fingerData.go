@@ -3,8 +3,8 @@ package data
 import (
 	_ "embed"
 	"encoding/json"
-	"gofinger/core/module"
-	"gofinger/core/options"
+	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/core/options"
 	"log"
 	"strings"
 )
