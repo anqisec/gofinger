@@ -43,9 +43,4 @@ gofinger -h
 },
 ```
 
-为什么快？
-
-从先发送请求，等所有 url 的请求发送完之后再进行指纹识别 => 当 url 请求结束后即可进行指纹识别，而不需要等待全部请求完毕
-
-![image-20231218215536767](https://gallery-1310215391.cos.ap-beijing.myqcloud.com/img/image-20231218215536767.png)
 
