@@ -1,7 +1,7 @@
 package match
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
 	"strconv"
 	"strings"
 )

@@ -1,10 +1,10 @@
 package request
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/utils"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/utils"
+	"github.com/projectdiscovery/gologger"
 	"html"
-	"log"
 	"net/http"
 	"net/url"
 	"strings"
@@ -16,14 +16,14 @@ func SendRequest(urlStr string, client http.Client) module.Info {
 	}
 	parse, err := url.Parse(urlStr)
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 		return module.Info{}
 	}
 	urlStr = utils.GetHealthUrl(parse)
 	ip := utils.GetIP(parse)
 	request, err := http.NewRequest("GET", urlStr, nil)
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 		return module.Info{}
 	}
 	cookie := &http.Cookie{
@@ -35,7 +35,7 @@ func SendRequest(urlStr string, client http.Client) module.Info {
 	request.Header.Set("User-Agent", GetRandomUA())
 	response, err := client.Do(request)
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 		return module.Info{}
 	}
 	body := html.UnescapeString(GetBody(response))

@@ -1,9 +1,9 @@
 package runner
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/options"
-	"github.com/fuyoumingyan/gofinger/core/request"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/options"
+	"github.com/fuyoumingyan/gofinger/pkg/request"
 	"net/http"
 	"strings"
 	"sync"

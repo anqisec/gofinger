@@ -3,12 +3,12 @@ package runner
 import (
 	"encoding/csv"
 	"fmt"
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/options"
-	out "github.com/fuyoumingyan/gofinger/core/output"
-	"github.com/fuyoumingyan/gofinger/core/template"
-	"github.com/fuyoumingyan/gofinger/core/utils"
-	"log"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/options"
+	out "github.com/fuyoumingyan/gofinger/pkg/output"
+	"github.com/fuyoumingyan/gofinger/pkg/template"
+	"github.com/fuyoumingyan/gofinger/pkg/utils"
+	"github.com/projectdiscovery/gologger"
 	"os"
 	"strings"
 )
@@ -32,9 +32,12 @@ func NewOutputRunner(option *options.Options, fingerRunner *FingerRunner, reques
 	if len(option.Urls) > 1 {
 		file, err := os.Create("./result/results.csv")
 		if err != nil {
-			log.Println(err)
+			gologger.Error().Msg(err.Error())
 		}
-		file.WriteString("\xEF\xBB\xBF")
+		_, err = file.WriteString("\xEF\xBB\xBF")
+		if err != nil {
+			gologger.Error().Msg(err.Error())
+		}
 		o.file = file
 		o.writer = csv.NewWriter(o.file)
 		o.saveCSV = true
@@ -72,13 +75,17 @@ func (o *output) RunEnumeration() {
 		o.file.Close()
 	}
 	o.Print("fingerprint identification complete .")
-	o.Print("Start taking screenshots of URLs.")
+	if o.option.Screenshot {
+		o.Print("Start taking screenshots of URLs.")
+	}
 	if o.saveHtml {
 		screenshotRunner := NewScreenshotRunner(o.screenshotResult)
 		screenshotRunner.RunEnumeration()
 		template.GetHtmlResult(o.screenshotResult)
 	}
-	o.Print("Screenshots completed.")
+	if o.option.Screenshot {
+		o.Print("Screenshots completed.")
+	}
 }
 
 func (o *output) Print(str string) {
@@ -89,6 +96,6 @@ func (o *output) Print(str string) {
 		o.builder.WriteByte(' ')
 		screenWidth--
 	}
-	log.Printf("%s\n", o.builder.String())
+	gologger.Info().Msgf("%s\n", o.builder.String())
 	o.builder.Reset()
 }

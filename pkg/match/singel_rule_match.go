@@ -1,8 +1,8 @@
 package match
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"log"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/projectdiscovery/gologger"
 	"regexp"
 	"strings"
 )
@@ -15,7 +15,7 @@ func matchSingleRule(rule string, info module.Info) bool {
 	if len(match) > 1 {
 		ruleStr = strings.TrimSpace(match[1])
 	} else {
-		log.Fatalln(rule)
+		gologger.Fatal().Msg(rule)
 		return false
 	}
 	if len(strings.TrimSpace(ruleStr)) == 0 {

@@ -1,10 +1,10 @@
 package runner
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/screenshot"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/screenshot"
 	"github.com/go-rod/rod"
-	"log"
+	"github.com/projectdiscovery/gologger"
 	"sync"
 )
 
@@ -40,8 +40,8 @@ func (s *ScreenshotRunner) run(result module.Result) {
 	}(s)
 	err := screenshot.GetScreenshot(s.Browser, result)
 	if err != nil {
-		log.Printf("%s screenshot error : %v", result.Url, err)
+		gologger.Error().Msgf("%s screenshot error : %v", result.Url, err.Error())
 	} else {
-		log.Printf("%s screenshot successfully !", result.Url)
+		gologger.Info().Msgf("%s screenshot successfully !", result.Url)
 	}
 }

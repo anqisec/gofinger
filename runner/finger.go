@@ -1,11 +1,11 @@
 package runner
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/data"
-	"github.com/fuyoumingyan/gofinger/core/match"
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/options"
-	"github.com/fuyoumingyan/gofinger/core/utils"
+	"github.com/fuyoumingyan/gofinger/pkg/data"
+	"github.com/fuyoumingyan/gofinger/pkg/match"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/options"
+	"github.com/fuyoumingyan/gofinger/pkg/utils"
 	"strings"
 	"sync"
 	"sync/atomic"

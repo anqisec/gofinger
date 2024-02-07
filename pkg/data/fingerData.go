@@ -3,9 +3,9 @@ package data
 import (
 	_ "embed"
 	"encoding/json"
-	"github.com/fuyoumingyan/gofinger/core/module"
-	"github.com/fuyoumingyan/gofinger/core/options"
-	"log"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/fuyoumingyan/gofinger/pkg/options"
+	"github.com/projectdiscovery/gologger"
 	"strings"
 )
 
@@ -32,7 +32,7 @@ func GetFingerData(options *options.Options) []module.FingerData {
 	data := json.NewDecoder(reader)
 	err := data.Decode(&fingers)
 	if err != nil {
-		log.Fatalln(err)
+		gologger.Fatal().Msg(err.Error())
 	}
 	return fingers
 }

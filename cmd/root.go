@@ -1,17 +1,16 @@
-/*
-Copyright © 2023 fuming
-*/
+// Package cmd /*
 package cmd
 
 import (
 	"bufio"
 	"fmt"
-	"github.com/fuyoumingyan/gofinger/core/banner"
-	"github.com/fuyoumingyan/gofinger/core/options"
-	"github.com/fuyoumingyan/gofinger/core/utils"
+	"github.com/fuyoumingyan/gofinger/pkg/banner"
+	"github.com/fuyoumingyan/gofinger/pkg/options"
+	"github.com/fuyoumingyan/gofinger/pkg/utils"
 	"github.com/fuyoumingyan/gofinger/runner"
+	"github.com/projectdiscovery/gologger"
+	"github.com/projectdiscovery/gologger/levels"
 	"github.com/spf13/cobra"
-	"log"
 	"os"
 	"os/signal"
 	"time"
@@ -21,14 +20,15 @@ import (
 var rootCmd = &cobra.Command{
 	Use:     "gofinger",
 	Short:   "一款指纹识别工具",
-	Version: "0.97",
+	Version: "0.99",
 	Long:    banner.Banner,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(banner.Banner)
+		gologger.DefaultLogger.SetMaxLevel(levels.LevelDebug)
 		if len(url) == 0 && len(file) == 0 && !stdin {
 			return
 		}
-		log.Println("start fingerprint rule matching ...")
+		gologger.Info().Msg("start fingerprint rule matching ...")
 		start := time.Now()
 		var urls []string
 		if url != "" {
@@ -38,7 +38,7 @@ var rootCmd = &cobra.Command{
 			lines, err := utils.ReadLines(file)
 			lines = utils.DeduplicateEmptyStrings(lines)
 			if err != nil {
-				log.Fatalln(err)
+				gologger.Fatal().Msg(err.Error())
 			}
 			for _, line := range lines {
 				urls = append(urls, line)
@@ -54,13 +54,13 @@ var rootCmd = &cobra.Command{
 		if len(urls) > 1 {
 			err := utils.Mkdir("./result")
 			if err != nil {
-				log.Fatalln(err)
+				gologger.Fatal().Msg(err.Error())
 			}
 		}
 		if screenshot {
 			err := utils.Mkdir("./result/screenshots")
 			if err != nil {
-				log.Fatalln(err)
+				gologger.Fatal().Msg(err.Error())
 			}
 		}
 		option := &options.Options{
@@ -76,7 +76,7 @@ var rootCmd = &cobra.Command{
 		signal.Notify(c, os.Interrupt)
 		runner.RunEnumeration()
 		elapsed := time.Since(start)
-		log.Printf("this time it takes %v .", elapsed)
+		gologger.Info().Msgf("this time it takes %v .", elapsed)
 	},
 }
 

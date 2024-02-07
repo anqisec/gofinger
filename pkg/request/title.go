@@ -2,7 +2,7 @@ package request
 
 import (
 	"github.com/PuerkitoBio/goquery"
-	"log"
+	"github.com/projectdiscovery/gologger"
 	"regexp"
 	"strings"
 )
@@ -19,7 +19,7 @@ func GetTitle(body string) string {
 	} else {
 		document, err := goquery.NewDocumentFromReader(strings.NewReader(body))
 		if err != nil {
-			log.Println(err)
+			gologger.Error().Msg(err.Error())
 			return "<nil>"
 		}
 		title = document.Find("title").Text()

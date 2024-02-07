@@ -5,9 +5,9 @@ import (
 	"encoding/base64"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
+	"github.com/projectdiscovery/gologger"
 	"github.com/twmb/murmur3"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"strings"
@@ -22,7 +22,8 @@ func getICOHash(url string, body string, client http.Client) []string {
 	}
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(body))
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
+		return icoHashs
 	}
 	rules := []string{
 		"link[rel=\"shortcut icon\"]",
@@ -67,7 +68,7 @@ func getSingleICOHash(icoUrl string, client http.Client) string {
 func joinURLAndPath(baseURL string, path string) string {
 	parsedBaseURL, err := url.Parse(baseURL)
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 		return ""
 	}
 	var builder strings.Builder

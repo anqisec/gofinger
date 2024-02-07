@@ -1,7 +1,7 @@
 package screenshot
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
 	"os"

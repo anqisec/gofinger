@@ -2,9 +2,9 @@ package template
 
 import (
 	_ "embed"
-	"github.com/fuyoumingyan/gofinger/core/module"
+	"github.com/fuyoumingyan/gofinger/pkg/module"
+	"github.com/projectdiscovery/gologger"
 	"html/template"
-	"log"
 	"os"
 	"strings"
 )
@@ -22,13 +22,13 @@ func GetHtmlResult(screenshotResult []module.Result) {
 	}
 	file, err := os.Create("./result/results.html")
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 		return
 	}
 	defer file.Close()
 	// 将数据应用到模板并输出到文件
 	err = tmpl.Execute(file, screenshotResult)
 	if err != nil {
-		log.Println(err)
+		gologger.Error().Msg(err.Error())
 	}
 }

@@ -1,8 +1,8 @@
 package request
 
 import (
-	"github.com/fuyoumingyan/gofinger/core/utils"
-	"log"
+	"github.com/fuyoumingyan/gofinger/pkg/utils"
+	"github.com/projectdiscovery/gologger"
 	"regexp"
 	"strings"
 )
@@ -13,6 +13,7 @@ func GetJSRedirectURL(baseUrl, body string) string {
 		`window\.location\.replace\("([^"]+)"\)`,
 		`location\.replace\("([^"]+)"\)`,
 		`<meta http-equiv="refresh".*url=(.*)"`,
+		`(?im)\s*content=['"]\d;url=['"](.*?)['"]`,
 	}
 	var redirectURL string
 	for _, rule := range rules {
@@ -25,7 +26,7 @@ func GetJSRedirectURL(baseUrl, body string) string {
 	if redirectURL != "" && !strings.HasPrefix(redirectURL, "http") {
 		uri, err := utils.JoinURL(baseUrl, redirectURL)
 		if err != nil {
-			log.Println(err.Error())
+			gologger.Error().Msg(err.Error())
 			return ""
 		}
 		redirectURL = uri
